@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Berhasil</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0; 
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 600px; 
+            background-color: white; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin: 20px; 
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #378cf3;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px; 
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Pendaftaran Berhasil</h2>
+        <br>
+        <p>Terima kasih telah mendaftar! Anda akan diarahkan ke halaman login dalam beberapa detik.</p>
+        <button onclick="redirectToLogin()">OK</button>
+    </div>
+
+    <script>
+        function redirectToLogin() {
+            window.location.href = 'Login.html';
+        }
+
+        setTimeout(redirectToLogin, 3000); 
+    </script>
+</body>
+</html>

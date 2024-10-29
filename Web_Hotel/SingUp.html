@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar - The Luxury Hotel Isra</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0; 
+            padding: 20px; 
+        }
+
+        .signup-section {
+            padding: 40px;
+            max-width: 400px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin: 0 auto; 
+            width: 100%; 
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-top: 10px;
+        }
+
+        form input {
+            padding: 10px;
+            margin-top: 5px;
+        }
+
+        button {
+            background-color: #378cf3;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            width: 100%; 
+            margin: 0 auto; 
+        }
+    </style>
+</head>
+<body>
+    <section class="signup-section">
+        <h2>Daftar Akun Baru</h2>
+        <form id="signupForm" onsubmit="return saveUser()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Daftar</button>
+        </form>
+        <div id="signupMessage" style="color: green; margin-top: 10px;"></div>
+        <p>Sudah punya akun? <a href="Login.html">Login</a></p>
+    </section>
+
+
+    <script>
+        function saveUser() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const signupMessage = document.getElementById('signupMessage');
+    
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
+            signupMessage.innerHTML = "Pendaftaran berhasil! Anda akan diarahkan ke halaman SignUp_Berhasil.";
+
+            setTimeout(() => {
+                window.location.href = 'SignUp_Berhasil.html'; 
+            }, 2000); 
+
+            return false; 
+        }
+    </script>
+</body>
+</html>

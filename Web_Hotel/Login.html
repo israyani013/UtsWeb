@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - The Luxury Hotel Isra</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .login-section {
+            padding: 40px;
+            max-width: 400px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-top: 10px;
+        }
+
+        form input {
+            padding: 10px;
+            margin-top: 5px;
+        }
+
+        button {
+            background-color: #378cf3;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <section class="login-section">
+        <h2>Login ke Akun Anda</h2>
+        <form id="loginForm" onsubmit="return validateLogin()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+        <div id="loginMessage" style="color: red; margin-top: 10px;"></div>
+        
+        <p>Belum punya akun? <a href="SingUp.html">Daftar di sini</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 The Luxury Hotel Isra. Semua hak dilindungi.</p>
+    </footer>
+
+    <script>
+        function validateLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const messageDiv = document.getElementById('loginMessage');
+
+            const storedUsername = localStorage.getItem('username');
+            const storedPassword = localStorage.getItem('password');
+
+            if (username === storedUsername && password === storedPassword) {
+                messageDiv.style.color = 'green';
+                messageDiv.innerHTML = "Login berhasil! Selamat datang.";
+
+                setTimeout(() => {
+                    window.location.href = 'Landing_Page.html'; 
+                }, 2000); 
+
+                return false; 
+            } else {
+                messageDiv.innerHTML = "Username atau password salah. Silakan coba lagi.";
+                return false; 
+            }
+        }
+    </script>
+</body>
+</html>

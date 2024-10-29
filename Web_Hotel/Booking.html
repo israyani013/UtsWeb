@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel W - Pemesanan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .booking-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto; 
+            max-width: 600px; 
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input, select, button {
+            padding: 10px;
+            margin-top: 5px;
+        }
+
+        button {
+            background-color: #378cf3;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+        }
+    </style>
+    <script>
+        function redirectToBooking() {
+            window.location.href = "Booking_Berhasil.html";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Pesan Penginapan Anda</h1>
+    </header>
+
+    <section class="booking-section">
+        <h2>Kamar yang Tersedia</h2>
+        <table>
+            <tr>
+                <th>Tipe Kamar</th>
+                <th>Harga per Malam</th>
+                <th>Maksimal Kapasitas</th>
+            </tr>
+            <tr>
+                <td>Kamar Single</td>
+                <td>Rp 500.000</td>
+                <td>1 Orang</td>
+            </tr>
+            <tr>
+                <td>Kamar Double</td>
+                <td>Rp 750.000</td>
+                <td>2 Orang</td>
+            </tr>
+            <tr>
+                <td>Suite</td>
+                <td>Rp 1.250.000</td>
+                <td>4 Orang</td>
+            </tr>
+        </table>
+
+        <h2>Formulir Pemesanan</h2>
+        <form onsubmit="redirectToBooking(); return false;"> 
+            <label for="checkin">Tanggal Check-in:</label>
+            <input type="date" id="checkin" name="checkin" required />
+
+            <label for="checkout">Tanggal Check-out:</label>
+            <input type="date" id="checkout" name="checkout" required />
+
+            <label for="room-type">Tipe Kamar:</label>
+            <select id="room-type" name="room-type" required>
+                <option value="single">Kamar Single</option>
+                <option value="double">Kamar Double</option>
+                <option value="suite">Suite</option>
+            </select>
+
+            <label for="guests">Jumlah Tamu:</label>
+            <input type="number" id="guests" name="guests" min="1" required />
+
+            <button type="submit">Pesan Sekarang</button>
+        </form>
+
+        <footer>
+            <p>&copy; 2024 Hotel The Luxury Hotel Isra. Semua hak dilindungi.</p>
+        </footer>
+    </section>
+</body>
+</html>
